@@ -35,11 +35,12 @@
 //     }
 //   }
 // }
+import customCommandsLogin from "../page-object-model/custom-commands-login"
 
 Cypress.Commands.add('login', (usename, password) => {
 
-    cy.get('input[data-qa="login-email"]').type(usename)
-    cy.get('input[name="password"]').type(password)
-    cy.get('button[data-qa="login-button"]').click()
+    customCommandsLogin.userNameField.type(usename)
+    customCommandsLogin.passwordField.type(password)
+    customCommandsLogin.loginBtn.click()
 
 })
