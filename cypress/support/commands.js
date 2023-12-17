@@ -44,3 +44,12 @@ Cypress.Commands.add('login', (usename, password) => {
     customCommandsLogin.loginBtn.click()
 
 })
+
+Cypress.Commands.add('loginWidthSession', (userName, password) => {
+    cy.session([userName, password]) //browserı kapatıp açmadığın sürece hep geçerli olacak
+    cy.visit('')
+    cy.contains('Sign in').click() // Sign in varsa tıklşa
+    cy.get('email').type(userName) // sayfada ki alanlara eriş 
+    cy.get('password').type(password)
+    cy.get('btn').click() // giriş butonuna eriş ve tıkla
+})
