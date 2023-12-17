@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-
+import mochawesome from 'cypress-mochawesome-reporter/plugin';
 export default defineConfig({
   component: {
     devServer: {
@@ -10,12 +10,18 @@ export default defineConfig({
   },
   viewportWidth: 1500,
   viewportHeight: 1200,
+  reporter:"cypress-mochawesome-reporter",
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      mochawesome(on);
     },
   },
+
   env:{
-    hideXhr:true
+    hideXhr:true,
+    amazon:'https://www.amazon.de',
+    google:'https://www.google.com',
+    saucedemo:'https://www.saucedemo.com',
+
   }
 });

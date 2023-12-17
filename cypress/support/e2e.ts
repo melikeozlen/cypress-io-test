@@ -17,6 +17,7 @@
 import './commands'
 import 'cypress-slow-down'
 import 'cypress-plugin-xhr-toggle' // sol medüde ki istekleri kapatık açma özelliği
+import 'cypress-mochawesome-reporter/register';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 const app = window.top;
