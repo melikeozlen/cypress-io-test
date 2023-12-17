@@ -15,4 +15,7 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+  env:{
+    hideXhr:true
+  }
 });

@@ -16,6 +16,15 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-slow-down'
-
+import 'cypress-plugin-xhr-toggle' // sol medüde ki istekleri kapatık açma özelliği
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+const app = window.top;
+if (app) { // test ekranında görülen istekleri gizleme
+    if (!app.document.head.querySelector('data-hide-command-log-request')) {
+        const style = app.document.createElement('style')
+        style.innerHTML = '.command-name-request, .command-name-xhr {display:none}'
+        style.setAttribute('data-hide-command-log-request', '')
+        app.document.head.appendChild(style)
+    }
+}
