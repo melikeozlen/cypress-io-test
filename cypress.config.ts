@@ -1,6 +1,7 @@
 import { defineConfig } from "cypress";
 import mochawesome from 'cypress-mochawesome-reporter/plugin';
 export default defineConfig({
+  projectId:"j6hwhz",
   component: {
     devServer: {
       framework: "react",
