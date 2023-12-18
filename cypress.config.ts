@@ -11,6 +11,7 @@ export default defineConfig({
   },
   viewportWidth: 1500,
   viewportHeight: 1200,
+  watchForFileChanges:false,
   reporter:"cypress-mochawesome-reporter",
   e2e: {
     setupNodeEvents(on, config) {
